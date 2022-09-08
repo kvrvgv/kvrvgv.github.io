@@ -10,11 +10,10 @@ let item = "";
 let input1 = document.getElementsByTagName("input")[0]
 
 input1.addEventListener("input", function(){
-	if (!(tg.MainButton.isVisible)) {
-        tg.MainButton.show();
-	}
 	item = this.value
+	tg.MainButton.hide();
     tg.MainButton.setText("Громкость: " + item + "%");
+    tg.MainButton.show();
     if (item == 0) {
         input1.className = "slider muted"
     } else {
