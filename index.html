@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
-	<title>Document</title>
+	<title>Volume Control</title>
 </head>
 <body>
     <div class="container">
-        <input type="range" min="0" max="100" step="1" value="50">
-
+        Volume
+        <br>
+        <input type="range" min="0" max="100" step="1" value="50" class="slider middle">
+        <br>
+        <div class="values">
+            <div id="left">
+                0%
+            </div>
+            <div id="right">
+                100%
+            </div>
+        </div>
     </div>
     <div class="usercard" id="usercard"></div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
