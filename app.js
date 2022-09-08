@@ -11,14 +11,13 @@ let input1 = document.getElementsByTagName("input")[0]
 
 input1.addEventListener("click", function(){
 	if (tg.MainButton.isVisible) {
-		tg.MainButton.hide();
+
 	}
 	else {
-	    item = this.value
-		tg.MainButton.setText("Громкость: " + item);
 		tg.MainButton.show();
-		tg.sendData(item);
 	}
+	item = this.value
+    tg.MainButton.setText("Громкость: " + item);
 });
 
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
