@@ -12,7 +12,7 @@ let input1 = document.getElementsByTagName("input")[0]
 input1.addEventListener("input", function(){
 	item = this.value
 	tg.MainButton.hide();
-    tg.MainButton.setText("Громкость: " + item + "%");
+    tg.MainButton.setText("Установить громкость: " + item + "%");
     tg.MainButton.show();
     if (item == 0) {
         input1.className = "slider muted"
