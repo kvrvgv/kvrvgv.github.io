@@ -7,26 +7,28 @@
 	<title>Computer Control</title>
 </head>
 <body>
-    <div class="container" id="top-container">
-        Volume
-        <br>
-        <input type="range" min="0" max="100" step="1" value="50" class="slider middle">
-        <br>
-        <div class="values">
+    <div class="wrapper">
+        <div class="container" id="top-container">
+            Volume
+            <br>
+            <input type="range" min="0" max="100" step="1" value="50" class="slider middle">
+            <br>
+            <div class="values">
+                <div class="left">
+                    0%
+                </div>
+                <div class="right">
+                    100%
+                </div>
+            </div>
+        </div>
+        <div id="btn-container">
             <div class="left">
-                0%
+                <button id="block_user_btn">Block Computer</button>
             </div>
             <div class="right">
-                100%
+                <button id="off_computer_btn">Shutdown Now</button>
             </div>
-        </div>
-    </div>
-    <div id="btn-container">
-        <div class="left">
-            <button id="block_user_btn">Block Computer</button>
-        </div>
-        <div class="right">
-            <button id="off_computer_btn">Shutdown Now</button>
         </div>
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
