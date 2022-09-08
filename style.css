@@ -13,6 +13,7 @@ body {
     display: flex;
     font-size: 16px;
     font-weight: 300;
+    color: var(--tg-theme-hint_color);
     width: 80%;
     position: relative;
     left: 10%;
@@ -83,6 +84,16 @@ button {
     height: 5vh;
     width: 100%;
     border-radius: 50vw;
+    font-size: 18px;
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
+	font-family: Proxima-Nova-Bold,sans-serif;
+    font-size: 22px;
+    line-height: 27px;
+    font-weight: 400;
+}
+button:hover {
+    background: var(--tg-theme-secondary_bg_color);
 }
 #top-container {
     margin-top: 20vh;
