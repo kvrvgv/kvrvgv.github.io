@@ -29,16 +29,24 @@ input1.addEventListener("input", function(){
     }
 });
 
+let block_btn = document.getElementById("block_user_btn");
+
+block_btn.addEventListener("click", function(){
+    item = "block_computer";
+    tg.MainButton.hide();
+    tg.MainButton.setText("Выполнить: Блокировка компьютера");
+    tg.MainButton.show();
+});
+
+let off_comp_btn = document.getElementById("off_computer_btn");
+
+off_comp_btn.addEventListener("click", function(){
+    item = "off_computer";
+    tg.MainButton.hide();
+    tg.MainButton.setText("Выполнить: Выключение компьютера");
+    tg.MainButton.show();
+});
+
 Telegram.WebApp.onEvent("mainButtonClicked", function(){
     tg.sendData(item);
 });
-
-let usercard = document.getElementById("usercard");
-
-let p = document.createElement("p");
-
-p.innerText = `${tg.initDataUnsafe.user.first_name}
-${tg.initDataUnsafe.user.last_name}`;
-
-
-usercard.appendChild(p);

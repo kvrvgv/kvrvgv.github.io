@@ -7,7 +7,7 @@
 	<title>Volume Control</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="top-container">
         Volume
         <br>
         <input type="range" min="0" max="100" step="1" value="50" class="slider middle">
@@ -21,7 +21,16 @@
             </div>
         </div>
     </div>
-    <div class="usercard" id="usercard"></div>
+    <div class="container">
+        <div>
+            <button id="block_user_btn">Block User</button>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <button id="off_computer_btn">Shutdown Now</button>
+        </div>
+    </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 	<script src="app.js"></script>
 </body>
