@@ -17,6 +17,7 @@ input1.addEventListener("click", function(){
 	    item = this.value
 		tg.MainButton.setText("Громкость: " + item);
 		tg.MainButton.show();
+		tg.sendData(item);
 	}
 });
 
