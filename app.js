@@ -73,9 +73,9 @@ function blinking(){
         let b = Math.random() * 16;
         content_elem.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`;
     } else {
-        let a = Math.random() + 0.5;
+        let a = Math.random() + 0.4;
         let r = Math.random() * 64;
-        let g = Math.random() * 255 / 2 + 127;
+        let g = Math.random() * 255 + 64;
         let b = Math.random() * 64;
         let color = `rgba(${r}, ${g}, ${b}, ${a})`;
         content_elem.style.color = color;
