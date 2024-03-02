@@ -11,8 +11,8 @@ async function main() {
     let name = "kvrvgv";
 
     for (let i = 0; i < name.length; i++){
-        for (let j = 0; j < 25; j++){
-            await sleep(25).then(() => {
+        for (let j = 0; j < 15; j++){
+            await sleep(45).then(() => {
                 title_elem.innerHTML = title_elem.innerHTML.slice(0, -1);
                 title_elem.innerHTML += (Math.random() + 1).toString(36).split("").pop();
             })
