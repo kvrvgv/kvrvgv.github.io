@@ -1,52 +1,88 @@
-let tg = window.Telegram.WebApp;
 
-tg.expand();
 
-tg.MainButton.textColor = "#FFFFFF";
-tg.MainButton.color = "#2cab37";
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-let item = "";
 
-let input1 = document.getElementsByTagName("input")[0]
+async function main() {
+    let title_elem = document.getElementById("title");
 
-input1.addEventListener("input", function(){
-	item = this.value
-	tg.MainButton.hide();
-    tg.MainButton.setText("Установить громкость: " + item + "%");
-    tg.MainButton.show();
-    if (item == 0) {
-        input1.className = "slider muted"
-    } else {
-        if (item > 0 && item <= 33) {
-            input1.className = "slider low"
-        } else {
-            if (item > 33 && item <= 70) {
-                input1.className = "slider middle"
-            } else {
-                input1.className = "slider loud"
-            }
+    let name = "kvrvgv";
+
+    for (let i = 0; i < name.length; i++){
+        for (let j = 0; j < 25; j++){
+            await sleep(25).then(() => {
+                title_elem.innerHTML = title_elem.innerHTML.slice(0, -1);
+                title_elem.innerHTML += (Math.random() + 1).toString(36).split("").pop();
+            })
         }
+        title_elem.innerHTML = title_elem.innerHTML.slice(0, -1);
+        title_elem.innerHTML += name[i] + " ";
     }
-});
+    title_elem.innerHTML = title_elem.innerHTML.slice(0, -1);
+}
 
-let block_btn = document.getElementById("block_user_btn");
+main();
 
-block_btn.addEventListener("click", function(){
-    item = "block_computer";
-    tg.MainButton.hide();
-    tg.MainButton.setText("Выполнить: Блокировка компьютера");
-    tg.MainButton.show();
-});
+let c = document.getElementById("c");
+let ctx = c.getContext("2d");
 
-let off_comp_btn = document.getElementById("off_computer_btn");
+c.height = window.innerHeight;
+c.width = window.innerWidth;
 
-off_comp_btn.addEventListener("click", function(){
-    item = "off_computer";
-    tg.MainButton.hide();
-    tg.MainButton.setText("Выполнить: Выключение компьютера");
-    tg.MainButton.show();
-});
+let matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+matrix = matrix.split("");
 
-Telegram.WebApp.onEvent("mainButtonClicked", function(){
-    tg.sendData(item);
-});
+let font_size = 10;
+let columns = c.width / font_size;
+let drops = [];
+for (let x = 0; x < columns; x++)
+    drops[x] = 1;
+
+function draw() {
+    let now = new Date();
+    let hour = now.getHours();
+    let color = "#0F0";
+    if (hour > 6 && hour < 18)
+        color = "#FF0";
+
+    ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+    ctx.fillRect(0, 0, c.width, c.height);
+
+    ctx.fillStyle = color;
+    ctx.font = font_size + "px arial";
+    for (let i = 0; i < drops.length; i++) {
+        let text = matrix[Math.floor(Math.random() * matrix.length)];
+        ctx.fillText(text, i * font_size, drops[i] * font_size);
+
+        if (drops[i] * font_size > c.height && Math.random() > 0.975)
+            drops[i] = 0;
+
+        drops[i]++;
+    }
+}
+setInterval(draw, 32);
+
+function blinking(){
+    let content_elem = document.getElementById("content");
+    if (Math.random() > 0.5){
+        let a = Math.random();
+        let r = Math.random() * 16;
+        let g = Math.random() * 64;
+        let b = Math.random() * 16;
+        content_elem.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`;
+    } else {
+        let a = Math.random() + 0.5;
+        let r = Math.random() * 64;
+        let g = Math.random() * 255 / 2 + 127;
+        let b = Math.random() * 64;
+        let color = `rgba(${r}, ${g}, ${b}, ${a})`;
+        content_elem.style.color = color;
+        let hrefs = document.getElementsByClassName("l");
+        for (let i = 0; i < hrefs.length; i++)
+            hrefs[i].style.color = color;
+    }
+}
+
+setInterval(blinking, 128)
