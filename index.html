@@ -4,22 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>kvrvgv</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="overlay"></div>
-<canvas id="c"></canvas>
-<div id="content">
-  <div id="title"></div>
-  <ul class="social-icons">
-    <li><a class="l" href="https://github.com/kvrvgv" target="_blank">gh</a></li>
-    <li><a class="l" href="https://kvrvgv.t.me/" target="_blank">tg</a></li>
-    <li><a class="l" href="https://vk.com/kvrvgv" target="_blank">vk</a></li>
-    <li><a class="l" href="https://instagram.com/kvrvgv" target="_blank">ig</a></li>
-    <li><a class="l" href="mailto:kvrvgv@yandex.ru" target="_blank">@</a></li>
-  </ul>
+<div id="screen">
+  <canvas id="c"></canvas>
+  <canvas id="glow"></canvas>
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
 </div>
+
+<div id="panel">
+  <div id="title">&nbsp;</div>
+  <div id="status">$ <span id="prog">boot</span><span class="cursor">█</span></div>
+  <a id="tg" href="https://kvrvgv.t.me/" target="_blank" rel="noopener">&gt; tg: @kvrvgv</a>
+</div>
+
 <script src="app.js"></script>
 </body>
 </html>
